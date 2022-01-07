@@ -6,7 +6,7 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
-import com.kms.katalon.core.mobile.keyword.builtin.SetTextKeyword
+import com.kms.katalon.core.mobile.keyword.builtin.SetTextKeyword as SetTextKeyword
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
@@ -18,16 +18,17 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser("")
+WebUI.openBrowser('')
 
-WebUI.navigateToUrl("https://opensource-demo.orangehrmlive.com/")
+WebUI.navigateToUrl('https://opensource-demo.orangehrmlive.com/')
 
-WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_LOGIN Panel_txtUsername'), "Admin")
+WebUI.setText(findTestObject('Object Repository/Page_OrangeHRM/input_LOGIN Panel_txtUsername'), username)
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Page_OrangeHRM/input_Username_txtPassword'), "hUKwJTbofgPU9eVlw/CnDQ==")
+WebUI.setEncryptedText(findTestObject('Object Repository/Page_OrangeHRM/input_Username_txtPassword'), 'hUKwJTbofgPU9eVlw/CnDQ==')
 
 WebUI.click(findTestObject('Object Repository/Page_OrangeHRM/input_Password_Submit'))
 
-WebUI.verifyTextPresent("Welcome", false, FailureHandling.STOP_ON_FAILURE)
+WebUI.verifyTextPresent('Welcome', false, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.closeBrowser()
+
